@@ -58,17 +58,12 @@ const DicoModal = () => {
   };
     return (
       <>
-        <button
-          className="rounded-lg bg-gray-400 px-3 py-2 font-bold text-black dark:bg-gray-900 dark:text-white"
-          onClick={onOpen}
-        >
-          FR - ESP
-        </button>
+        <button onClick={onOpen}>FR - ESP</button >
 
         <Modal size={"xl"} isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent className="text-center dark:bg-gray-700 dark:text-white ">
-            <ModalHeader className="pb-5 text-2xl font-bold ">
+            <ModalHeader className="text-2xl font-bold pb-5 ">
               Français - Espagnol
             </ModalHeader>
             <ModalCloseButton />
@@ -130,7 +125,7 @@ const DicoModal = () => {
                     id="word"
                   />
                   <button
-                    className="bg-gray-700px-3 dark:text-whitedark:bg-gray-900 rounded-lg rounded-l-none bg-gray-400 px-3  py-1.5 font-bold font-bold dark:bg-gray-900 dark:text-white"
+                    className="bg-gray-700px-3 dark:text-whitedark:bg-gray-900 rounded-lg rounded-l-none bg-gray-400 px-3  py-1.5 font-bold dark:bg-gray-900 dark:text-white font-bold"
                     type="submit"
                   >
                     Chercher
