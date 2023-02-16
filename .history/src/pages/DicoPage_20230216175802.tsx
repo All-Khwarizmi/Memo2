@@ -26,7 +26,7 @@ const Dico = () => {
 
   const fetchDico = async (word: string): Promise<void> => {
     console.log("Fetching..");
-    const url = "https://memo2-ten.vercel.app/api/dico";
+    const url = "https://memo2-ten.vercel.app//api/dico";
     const options: RequestInit = {
       method: "POST",
       headers: {
