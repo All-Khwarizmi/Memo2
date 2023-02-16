@@ -72,15 +72,15 @@ const EspModal = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody className="min-h-300  ">
-            <div className="  text-black">
-              <div className="w-fit ">
+            <div className=" grid-row grid items-center gap-5  text-black">
+              <div className=" ">
                 <table className="   text-left text-sm text-gray-500 dark:text-gray-400">
                   <thead
                     className={`sticky ${
                       translations.length ? null : "hidden"
                     }  top-0 bg-gray-50 bg-gray-400 text-xs uppercase  text-gray-700  dark:bg-gray-900 dark:text-gray-400`}
                   >
-                    <tr className="  ">
+                    <tr className="w-[100%]  ">
                       <th scope="col" className=" px-6 py-3">
                         Dans le sens de
                       </th>
@@ -99,7 +99,7 @@ const EspModal = () => {
                           <td className="px-6 py-4"> {parse(trad?.source)}</td>
                           <th
                             scope="row"
-                            className="  px-6 py-4 font-medium text-gray-900 dark:text-white"
+                            className="whitespace-nowrap  px-6 py-4 font-medium text-gray-900 dark:text-white"
                           >
                             {parse(trad?.target)}
                           </th>
@@ -123,7 +123,7 @@ const EspModal = () => {
                   id="word"
                 />
                 <button
-                  className="bg-gray-700 px-3 dark:text-white dark:bg-gray-900 rounded-lg rounded-l-none bg-gray-400 px-3  py-1.5 font-bold font-bold dark:bg-gray-900 dark:text-white"
+                  className="bg-gray-700px-3 dark:text-whitedark:bg-gray-900 rounded-lg rounded-l-none bg-gray-400 px-3  py-1.5 font-bold font-bold dark:bg-gray-900 dark:text-white"
                   type="submit"
                 >
                   Chercher

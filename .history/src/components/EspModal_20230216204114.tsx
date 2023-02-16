@@ -72,7 +72,7 @@ const EspModal = () => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody className="min-h-300  ">
-            <div className="  text-black">
+            <div className=" grid-row grid items-center gap-5  text-black">
               <div className="w-fit ">
                 <table className="   text-left text-sm text-gray-500 dark:text-gray-400">
                   <thead
@@ -99,7 +99,7 @@ const EspModal = () => {
                           <td className="px-6 py-4"> {parse(trad?.source)}</td>
                           <th
                             scope="row"
-                            className="  px-6 py-4 font-medium text-gray-900 dark:text-white"
+                            className="whitespace-nowrap  px-6 py-4 font-medium text-gray-900 dark:text-white"
                           >
                             {parse(trad?.target)}
                           </th>

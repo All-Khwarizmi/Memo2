@@ -99,7 +99,7 @@ const EspModal = () => {
                           <td className="px-6 py-4"> {parse(trad?.source)}</td>
                           <th
                             scope="row"
-                            className="  px-6 py-4 font-medium text-gray-900 dark:text-white"
+                            className="whitespace-nowrap  px-6 py-4 font-medium text-gray-900 dark:text-white"
                           >
                             {parse(trad?.target)}
                           </th>
