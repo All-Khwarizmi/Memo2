@@ -32,7 +32,7 @@ const server = z.object({
  * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 const client = z.object({
-  NEXT_PUBLIC_PONS_SECRET: z.string(),
+  NEXT_PUBLIC_PONS_SECRET
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
 });
 
@@ -50,7 +50,6 @@ const processEnv = {
   DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-  NEXT_PUBLIC_PONS_SECRET: process.env.PONS_SECRET,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
 };
 

@@ -12,6 +12,7 @@ const Dico = () => {
   const [word, setWord] = useState("");
   const [translations, setTranslations] = useState<Translations>([]);
 
+
   const submitWord = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitting");

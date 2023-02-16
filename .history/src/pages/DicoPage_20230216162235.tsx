@@ -11,6 +11,9 @@ type Translations = Array<Trad>;
 const Dico = () => {
   const [word, setWord] = useState("");
   const [translations, setTranslations] = useState<Translations>([]);
+  console.log(word);
+  console.log(translations[0]?.target);
+
 
   const submitWord = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
