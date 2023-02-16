@@ -5,7 +5,6 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 import { api } from "../utils/api";
 import DicoModal from "../components/DicoModal";
-import EspModal from "../components/EspModal";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -24,7 +23,7 @@ const Home: NextPage = () => {
           </h1>
           <div className="grid grid-cols-1 gap-4  sm:grid-cols-2 md:gap-8">
            <DicoModal />
-           <EspModal />
+           
           </div>
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
