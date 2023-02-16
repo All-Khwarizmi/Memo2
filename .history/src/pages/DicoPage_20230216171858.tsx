@@ -17,7 +17,8 @@ const Dico = () => {
   const submitWord = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     console.log("Submitting");
-    fetchDico(word).catch(err => console.log(err));
+    fetchDico(word).catch(console.error();
+    );
   };
 
   const inputWord = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,10 +36,8 @@ const Dico = () => {
       body: JSON.stringify(word),
     };
     const res = await fetch(url, options);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const data = await res.json();
+    const data: any = await res.json();
     console.log("Data: ", data);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { translations }: TranslationsFetch = data;
     setTranslations(translations);
   };

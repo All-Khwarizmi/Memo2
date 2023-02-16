@@ -18,7 +18,7 @@ function runMiddleware(
   fn: Function
 ) {
   return new Promise((resolve, reject) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    @typescript-eslint/no-explicit-any
     fn(req, res, (result: any) => {
       if (result instanceof Error) {
         return reject(result)
@@ -43,25 +43,21 @@ if (req.method === "GET") return res.status(403).send({message: "Only POST resqu
         "X-secret": env.NEXT_PUBLIC_PONS_SECRET,
       },
     }
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+    const word = "maison"
       const url = `https://api.pons.com/v1/dictionary?q=${req.body}&in=fr&language=es&l=esfr`;
   console.log("Got a french - spanish request", req.body, req.method);
       try {
       const response = await fetch(url, options);
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const data = await response.json();
 
       // Parsing  data
-           // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
-      const translations: unknown = data[0].hits[0].roms[0].arabs[0].translations
-           // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
-      const source: unknown = data[0].hits[0].roms[0].headword
+      const translations = data[0].hits[0].roms[0].arabs[0].translations
+      const source = data[0].hits[0].roms[0].headword
       
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment 
+
       res.json({ source ,translations})
     } catch (error) {
       console.log(error);
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment 
       res.json({ message: 'Something went wrong' })
     } 
    

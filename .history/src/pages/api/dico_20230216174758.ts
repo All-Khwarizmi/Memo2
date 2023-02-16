@@ -55,6 +55,7 @@ if (req.method === "GET") return res.status(403).send({message: "Only POST resqu
            // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
       const translations: unknown = data[0].hits[0].roms[0].arabs[0].translations
            // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
+        
       const source: unknown = data[0].hits[0].roms[0].headword
       
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment 

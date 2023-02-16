@@ -38,7 +38,6 @@ const Dico = () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const data = await res.json();
     console.log("Data: ", data);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { translations }: TranslationsFetch = data;
     setTranslations(translations);
   };

@@ -52,9 +52,11 @@ if (req.method === "GET") return res.status(403).send({message: "Only POST resqu
       const data = await response.json();
 
       // Parsing  data
-           // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
+           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment 
+         const 0 = 0
       const translations: unknown = data[0].hits[0].roms[0].arabs[0].translations
-           // eslint-disable-next-line  @typescript-eslint/no-unsafe-member-access
+           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment 
+        
       const source: unknown = data[0].hits[0].roms[0].headword
       
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment 

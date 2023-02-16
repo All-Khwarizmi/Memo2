@@ -1,6 +1,7 @@
-/* eslint-disable no-console */
+
 import React, { useState } from "react";
 import parse from "html-react-parser";
+
 
 type Trad = {
   source: string;
@@ -14,10 +15,11 @@ const Dico = () => {
   const [word, setWord] = useState("");
   const [translations, setTranslations] = useState<Translations>([]);
 
-  const submitWord = (e: React.FormEvent<HTMLFormElement>): void => {
+  const submitWord = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Submitting");
-    fetchDico(word).catch(err => console.log(err));
+    const myData = fetchDico(word);
+    return myData;
   };
 
   const inputWord = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,11 +37,9 @@ const Dico = () => {
       body: JSON.stringify(word),
     };
     const res = await fetch(url, options);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const data = await res.json();
     console.log("Data: ", data);
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const { translations }: TranslationsFetch = data;
+    const { translations}:TranslationsFetch = data;
     setTranslations(translations);
   };
 
@@ -50,39 +50,43 @@ const Dico = () => {
       </div>
       <div className="flex h-full w-full flex-col items-center gap-5">
         <div className="border-black-500 h-[40%] max-h-[40%] w-[60%] overflow-scroll rounded border-2 border-solid bg-gray-200">
+          
           <div className="text-black">
-            <div>
-              <table className=" relative w-full text-left text-sm text-gray-500 dark:text-gray-400">
-                <thead className=" sticky top-0 bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
-                  <tr>
-                    <th scope="col" className="px-6 py-3">
-                      Dans le sens de
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      Traduction
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {translations?.map((trad: Trad, index) => {
-                    return (
-                      <tr
-                        className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
-                        key={index}
-                      >
-                        <td className="px-6 py-4"> {parse(trad?.source)}</td>
-                        <th
-                          scope="row"
-                          className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
-                        >
-                          {parse(trad?.target)}
+            <div >
+                  <table className=" relative w-full text-left text-sm text-gray-500 dark:text-gray-400">
+                    <thead className=" sticky top-0 bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                        <th scope="col" className="px-6 py-3">
+                          Dans le sens de
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Traduction
                         </th>
                       </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                    </thead>
+                    <tbody>
+
+                      {translations?.map((trad: Trad, index) => {
+              return (
+                <tr
+                  className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+                  key={index}
+                >
+                  <td className="px-6 py-4"> {parse(trad?.source)}</td>
+                  <th
+                    scope="row"
+                    className="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
+                  >
+                    {parse(trad?.target)}
+                  </th>
+                </tr>
+              ); })}
+                      
+                    </tbody>
+                  </table>
+                </div>
+            
+           
           </div>
         </div>
         <form className="text-black" onSubmit={(e) => submitWord(e)}>
